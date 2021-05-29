@@ -1,2 +1,2 @@
-web: gunicorn bridged_mvp/bridged_mvp.wsgi
+web: gunicorn $WSGI_PATH
 
