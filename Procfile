@@ -1,2 +1,2 @@
-web: gunicorn $WSGI_PATH:application
+web: sh -c 'cd bridged_mvp && gunicorn bridged_mvp.wsgi:application'
 
