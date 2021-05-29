@@ -1,2 +1,2 @@
-web: gunicorn $WSGI_PATH
+web: gunicorn $WSGI_PATH:application
 
