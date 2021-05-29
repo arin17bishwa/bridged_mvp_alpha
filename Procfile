@@ -1,1 +1,2 @@
-web: gunicorn bridged_mvp.wsgi
+web: gunicorn bridged_mvp
+
