@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from .views import loader_io
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('loaderio-39cf266dd5a723050b3f3fa395391151/',loader_io,name='loader_io'),
     path('students/',include('students.urls'),name='students'),
 ]
