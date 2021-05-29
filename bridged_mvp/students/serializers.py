@@ -21,8 +21,8 @@ class RegistrationSerializer(serializers.ModelSerializer):
         _ = self
         if email == '' or email is None:
             raise serializers.ValidationError({'email': ['Email field is required']})
-        # if User.objects.filter(email=email).exists():
-        #     raise serializers.ValidationError("email already exists")
+        if User.objects.filter(email=email).exists():
+            raise serializers.ValidationError("email already exists")
         return value
 
     def save(self):
