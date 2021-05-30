@@ -19,5 +19,6 @@ from .views import loader_io
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('loaderio-39cf266dd5a723050b3f3fa395391151/',loader_io,name='loader_io'),
+    path('events/',include('events.urls'),name='events'),
     path('students/',include('students.urls'),name='students'),
 ]
