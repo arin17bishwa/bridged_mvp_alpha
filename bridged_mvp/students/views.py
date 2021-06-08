@@ -25,6 +25,7 @@ def play_view(request):
 
 
 @api_view(['POST', ])
+@permission_classes([IsAdminUser,])
 def registration_view(request):
     serializer = RegistrationSerializer(data=request.data)
     data = {}
@@ -36,9 +37,11 @@ def registration_view(request):
         _=send_conf_mail(request=request,user=account,email=data['email'])
         token=Token.objects.get(user=account).key
         data['token']=token
+        status_code=status.HTTP_201_CREATED
     else:
         data=serializer.errors
-    return Response(data)
+        status_code=status.HTTP_400_BAD_REQUEST
+    return Response(data,status=status_code)
 
 
 def activate(request, uidb64, token):
