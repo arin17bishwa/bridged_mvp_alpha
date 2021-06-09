@@ -23,6 +23,7 @@ urlpatterns = [
     path('loaderio-39cf266dd5a723050b3f3fa395391151/',loader_io,name='loader_io'),
     path('events/',include('events.urls'),name='events'),
     path('students/',include('students.urls'),name='students'),
+    path('contents/',include('contents.urls'),name='contents'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
