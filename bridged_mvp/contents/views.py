@@ -21,6 +21,6 @@ from .models import (
 
 
 class AllContentListView(ListAPIView):
+    queryset = Content.objects.order_by('name')
     serializer_class = ContentSerializer
     permission_classes = (IsAuthenticated,)
-    queryset = Content.objects.all()
