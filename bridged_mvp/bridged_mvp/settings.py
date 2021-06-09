@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     #  third party apps
     'rest_framework',
     'rest_framework.authtoken',
+    'cloudinary_storage',
+    'cloudinary',
 
     #  my apps
     'students',
@@ -137,7 +139,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME_BRIDGED'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY_BRIDGED'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET_BRIDGED'),
+}
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
