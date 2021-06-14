@@ -28,6 +28,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:5000',
+#     'http://localhost:8000',
+#     'http://localhost:8080',
+#     ]
+
 
 # Application definition
 
@@ -44,6 +52,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'cloudinary_storage',
     'cloudinary',
+    'corsheaders',
 
     #  my apps
     'students',
@@ -73,6 +82,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'bridged_mvp.urls'
