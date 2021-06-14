@@ -1,0 +1,5 @@
+school,school_code,admission_no,class,section,first_name,last_name,email,username,password,mailed,registered
+Test School,TS01,1001,6,A,Test,Student01,gagangautamaa@gmail.com,TS01TS1001,Random,1,1
+Test School 102,TS102,43,9,D,Test,Student43,gagangautamaa2@gmail.com,TS102TS43,Random43,1,1
+Test School 999,TS999,777,11,Z,Bakra,Man,bridgeduindia@gmail.com,TS999BM777,Random777,1,1
+Wrong School,WS01,124,12,K,Galat,Banda,galatbande_ka_email01732@gmail.cod,WS01GB124,Random124,1,1
