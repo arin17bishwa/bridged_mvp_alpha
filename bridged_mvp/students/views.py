@@ -14,7 +14,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 import sys
 
 
-from .serializers import RegistrationSerializer
+from .serializers import RegistrationSerializer,UserSerializer
 
 # Create your views here.
 
@@ -42,6 +42,24 @@ def registration_view(request):
         data=serializer.errors
         status_code=status.HTTP_400_BAD_REQUEST
     return Response(data,status=status_code)
+
+
+@api_view(['GET',])
+@permission_classes([IsAuthenticated,])
+def user_info_view(request):
+    user=request.user
+    serializer = UserSerializer(user)
+    data={}
+    try:
+        data['data']=serializer.data
+        data['status']=1
+        status_code=status.HTTP_200_OK
+    except Exception as e:
+        data['error']=e
+        data['status']=0
+        status_code=status.HTTP_400_BAD_REQUEST
+
+    return Response(data=data,status=status_code)
 
 
 def activate(request, uidb64, token):
